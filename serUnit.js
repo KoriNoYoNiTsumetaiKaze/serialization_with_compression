@@ -12,7 +12,7 @@ exports.serial = function(inData,err='') {
             err = 'there is no number or integer in the array';
             return '';
         }
-        if (item<100 && item>10) item = dicStr.charAt(item)
+        if (item<100 && item>9) item = dicStr.charAt(item)
         else if (item>99) {
             item = item.toString();
             item = dicStr.charAt(Number(item.charAt(0)+item.charAt(1)))+item.charAt(2);
@@ -23,7 +23,7 @@ exports.serial = function(inData,err='') {
         }
         else
             sumItem = 1;
-        sumArr.set(item,sumItem);
+        sumArr.set(item.toString(),sumItem);
     });
     let result = '';
     sumArr.forEach(function(value,key) {
